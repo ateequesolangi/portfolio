@@ -72,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initProjectsCatalog();
     initRevealAnimations();
     initPointerGlow();
-    initSkillField();
 });
 
 function initThemeToggle() {
@@ -465,72 +464,4 @@ function initPointerGlow() {
     if (!glowRaf) {
         glowRaf = window.requestAnimationFrame(animate);
     }
-}
-
-function initSkillField() {
-    const field = document.querySelector(".stack-marquee");
-    const track = document.querySelector(".stack-track");
-    const chips = document.querySelectorAll(".stack-chip");
-
-    if (!field || !track || chips.length === 0) return;
-
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) return;
-
-    const state = Array.from(chips).map((el) => ({
-        el,
-        x: Math.random() * 40 - 20,
-        y: Math.random() * 20 - 10,
-        vx: (Math.random() - 0.5) * 0.2,
-        vy: (Math.random() - 0.5) * 0.2,
-        tx: 0,
-        ty: 0
-    }));
-
-    let mouseX = -1000;
-    let mouseY = -1000;
-
-    field.addEventListener("pointermove", (e) => {
-        const rect = track.getBoundingClientRect();
-        mouseX = e.clientX - rect.left - rect.width / 2;
-        mouseY = e.clientY - rect.top - rect.height / 2;
-    });
-
-    field.addEventListener("pointerleave", () => {
-        mouseX = -1000;
-        mouseY = -1000;
-    });
-
-    const animateSkills = () => {
-        state.forEach((item) => {
-            // Natural drift
-            item.tx += item.vx;
-            item.ty += item.vy;
-
-            // Bounce off boundaries (rough)
-            if (Math.abs(item.tx) > 40) item.vx *= -1;
-            if (Math.abs(item.ty) > 20) item.vy *= -1;
-
-            // Mouse repulsion
-            const dx = item.tx - mouseX;
-            const dy = item.ty - mouseY;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-
-            if (dist < 120) {
-                const force = (120 - dist) / 120;
-                item.tx += (dx / dist) * force * 15;
-                item.ty += (dy / dist) * force * 15;
-            }
-
-            // Smoothing
-            item.x += (item.tx - item.x) * 0.1;
-            item.y += (item.ty - item.y) * 0.1;
-
-            item.el.style.transform = `translate(${item.x}px, ${item.y}px)`;
-        });
-
-        requestAnimationFrame(animateSkills);
-    };
-
-    animateSkills();
 }
