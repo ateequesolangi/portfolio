@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UE Dev Tips | Ateeque Ur Rehman</title>
+    <meta name="description" content="Practical Unreal Engine development tips for XR projects, performance, and interaction architecture.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="orb orb-a" aria-hidden="true"></div>
+    <div class="orb orb-b" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="top-nav" aria-label="Primary">
+            <a href="./index.html" class="brand-mark">
+                <span class="brand-mark__mono">AR</span>
+                <span class="brand-mark__text">Ateeque Rehman</span>
+            </a>
+
+            <div class="nav-cluster">
+                <div class="nav-menu">
+                    <a href="./index.html">Home</a>
+                    <a href="./projects.html">Projects</a>
+                    <a href="./github.html">GitHub</a>
+                    <a href="./youtube.html">YouTube</a>
+                    <a href="./articles.html">Articles</a>
+                    <a href="./uetips.html" aria-current="page">UE Tips</a>
+                </div>
+
+                <a href="./assets/pdf/Ateeque_Resume_UE5_Final.pdf" class="nav-resume" target="_blank" rel="noopener noreferrer">Resume</a>
+
+                <div class="nav-social">
+                    <a href="https://www.linkedin.com/in/ateequesolangi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://medium.com/@ateeque.solangi" target="_blank" rel="noopener noreferrer" aria-label="Medium profile">
+                        <i class="fab fa-medium" aria-hidden="true"></i>
+                    </a>
+                    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch between dark and light theme">
+                        <i class="fas fa-sun" aria-hidden="true"></i>
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="page-shell page-shell--inner">
+        <section class="page-hero panel" data-reveal>
+            <div class="page-hero__top">
+                <a href="./index.html" class="page-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to home</a>
+            </div>
+            <p class="page-hero__label">UE Knowledge Base</p>
+            <h1 class="page-hero__title">Short Unreal Engine patterns that save time in XR production.</h1>
+            <p class="page-hero__body">These are not abstract rules. They are the kinds of patterns that help reduce fragility, avoid wasted performance, and keep complex interaction work easier to maintain.</p>
+        </section>
+
+        <section class="story-list" aria-label="Unreal Engine tips">
+            <article class="tip-card" data-reveal style="--delay: 0.05s;">
+                <div class="tip-card__row">
+                    <div class="tip-card__icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+                    <div>
+                        <h3>Use event-driven interaction over constant polling</h3>
+                        <p>Ticks and repeated casts add up quickly in XR scenes. Prefer dispatchers, interfaces, and explicit state transitions whenever the interaction logic allows it.</p>
+                    </div>
+                </div>
+                <pre class="code-snippet"><code>DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnVRInteract);</code></pre>
+            </article>
+
+            <article class="tip-card" data-reveal style="--delay: 0.1s;">
+                <div class="tip-card__row">
+                    <div class="tip-card__icon"><i class="fas fa-microchip" aria-hidden="true"></i></div>
+                    <div>
+                        <h3>Use HISM when repetition is the point</h3>
+                        <p>When a scene needs many repeated assets, Hierarchical Instanced Static Meshes keep draw calls under control and leave more room for interaction logic.</p>
+                    </div>
+                </div>
+                <pre class="code-snippet"><code>UHierarchicalInstancedStaticMeshComponent* HismComponent;</code></pre>
+            </article>
+
+            <article class="tip-card" data-reveal style="--delay: 0.15s;">
+                <div class="tip-card__row">
+                    <div class="tip-card__icon"><i class="fas fa-gauge-high" aria-hidden="true"></i></div>
+                    <div>
+                        <h3>Profile interaction moments, not just the whole frame</h3>
+                        <p>Frame averages can hide spikes. Capture the cost of grabbing, releasing, spawning, or mode switching so the expensive moments are visible when they matter.</p>
+                    </div>
+                </div>
+                <pre class="code-snippet"><code>stat unit
+stat game
+stat gpu</code></pre>
+            </article>
+        </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>

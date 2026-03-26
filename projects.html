@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Ateeque Ur Rehman</title>
+    <meta name="description" content="Selected XR, Unreal Engine, and immersive training projects by Ateeque Ur Rehman.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="orb orb-a" aria-hidden="true"></div>
+    <div class="orb orb-b" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="top-nav" aria-label="Primary">
+            <a href="./index.html" class="brand-mark">
+                <span class="brand-mark__mono">AR</span>
+                <span class="brand-mark__text">Ateeque Rehman</span>
+            </a>
+
+            <div class="nav-cluster">
+                <div class="nav-menu">
+                    <a href="./index.html">Home</a>
+                    <a href="./projects.html" aria-current="page">Projects</a>
+                    <a href="./github.html">GitHub</a>
+                    <a href="./youtube.html">YouTube</a>
+                    <a href="./articles.html">Articles</a>
+                    <a href="./uetips.html">UE Tips</a>
+                </div>
+
+                <a href="./assets/pdf/Ateeque_Resume_UE5_Final.pdf" class="nav-resume" target="_blank" rel="noopener noreferrer">Resume</a>
+
+                <div class="nav-social">
+                    <a href="https://www.linkedin.com/in/ateequesolangi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://medium.com/@ateeque.solangi" target="_blank" rel="noopener noreferrer" aria-label="Medium profile">
+                        <i class="fab fa-medium" aria-hidden="true"></i>
+                    </a>
+                    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch between dark and light theme">
+                        <i class="fas fa-sun" aria-hidden="true"></i>
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="page-shell page-shell--inner">
+        <section class="page-hero panel" data-reveal>
+            <div class="page-hero__top">
+                <a href="./index.html" class="page-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to home</a>
+            </div>
+            <p class="page-hero__label">Project Catalog</p>
+            <h1 class="page-hero__title">XR work shaped by gameplay feel, system clarity, and performance discipline.</h1>
+            <p class="page-hero__body">These are the projects that best represent how I work: strong interaction design, practical optimization, and immersive systems built to survive real production constraints.</p>
+            <div class="page-hero__actions">
+                <a href="./assets/pdf/Ateeque_Resume_UE5_Final.pdf" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Download Resume</a>
+                <a href="./github.html" class="btn btn--ghost">Open GitHub</a>
+            </div>
+        </section>
+
+        <section id="projectsCatalog" class="catalog-grid" aria-label="Project catalog"></section>
+    </main>
+
+    <div id="videoModal" class="video-modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-label="Project video">
+            <button class="close-modal" type="button" aria-label="Close video">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="video-container">
+                <iframe
+                    id="videoIframe"
+                    title="Project video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>

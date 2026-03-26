@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles | Ateeque Ur Rehman</title>
+    <meta name="description" content="Writing and technical essays on XR development, Unreal Engine, and engineering judgment by Ateeque Ur Rehman.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="orb orb-a" aria-hidden="true"></div>
+    <div class="orb orb-b" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="top-nav" aria-label="Primary">
+            <a href="./index.html" class="brand-mark">
+                <span class="brand-mark__mono">AR</span>
+                <span class="brand-mark__text">Ateeque Rehman</span>
+            </a>
+
+            <div class="nav-cluster">
+                <div class="nav-menu">
+                    <a href="./index.html">Home</a>
+                    <a href="./projects.html">Projects</a>
+                    <a href="./github.html">GitHub</a>
+                    <a href="./youtube.html">YouTube</a>
+                    <a href="./articles.html" aria-current="page">Articles</a>
+                    <a href="./uetips.html">UE Tips</a>
+                </div>
+
+                <a href="./assets/pdf/Ateeque_Resume_UE5_Final.pdf" class="nav-resume" target="_blank" rel="noopener noreferrer">Resume</a>
+
+                <div class="nav-social">
+                    <a href="https://www.linkedin.com/in/ateequesolangi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://medium.com/@ateeque.solangi" target="_blank" rel="noopener noreferrer" aria-label="Medium profile">
+                        <i class="fab fa-medium" aria-hidden="true"></i>
+                    </a>
+                    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch between dark and light theme">
+                        <i class="fas fa-sun" aria-hidden="true"></i>
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="page-shell page-shell--inner">
+        <section class="page-hero panel" data-reveal>
+            <div class="page-hero__top">
+                <a href="./index.html" class="page-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to home</a>
+            </div>
+            <p class="page-hero__label">Writing Archive</p>
+            <h1 class="page-hero__title">Thoughts on XR development, engineering judgment, and the practical side of shipping.</h1>
+            <p class="page-hero__body">These pieces sit between technical writing and production notes. They are meant to be useful, grounded, and shaped by real work rather than abstract commentary.</p>
+            <div class="page-hero__actions">
+                <a href="https://medium.com/@ateeque.solangi" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Open Medium</a>
+            </div>
+        </section>
+
+        <section class="story-list" aria-label="Articles">
+            <a class="story-card" href="https://medium.com/@ateeque.solangi" target="_blank" rel="noopener noreferrer" data-reveal style="--delay: 0.05s;">
+                <div class="story-card__content">
+                    <p class="story-card__meta">Jul 2025 | Technical Guide</p>
+                    <h2 class="story-card__title">Getting Started with VR Development in Unreal Engine</h2>
+                    <p class="story-card__body">A practical guide for setting up the right tools, understanding the early friction points, and starting immersive development without wasting momentum.</p>
+                    <div class="story-card__badges">
+                        <span class="story-card__badge">VR Workflow</span>
+                        <span class="story-card__badge">Unreal Engine</span>
+                    </div>
+                </div>
+                <div class="story-card__thumb">
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=900&q=80" alt="VR development workspace">
+                </div>
+            </a>
+
+            <a class="story-card" href="https://medium.com/@ateeque.solangi" target="_blank" rel="noopener noreferrer" data-reveal style="--delay: 0.1s;">
+                <div class="story-card__content">
+                    <p class="story-card__meta">Aug 2025 | AI Philosophy</p>
+                    <h2 class="story-card__title">Why Common Sense Comes First and AI Follows</h2>
+                    <p class="story-card__body">A reflection on why tools are only as effective as the judgment behind them, especially in technical work where shortcuts can look correct before they actually are.</p>
+                    <div class="story-card__badges">
+                        <span class="story-card__badge">AI</span>
+                        <span class="story-card__badge">Engineering Judgment</span>
+                    </div>
+                </div>
+                <div class="story-card__thumb">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80" alt="Abstract AI themed visual">
+                </div>
+            </a>
+
+            <a class="story-card" href="https://medium.com/@ateeque.solangi" target="_blank" rel="noopener noreferrer" data-reveal style="--delay: 0.15s;">
+                <div class="story-card__content">
+                    <p class="story-card__meta">Jul 2025 | Dev Tooling</p>
+                    <h2 class="story-card__title">Stop Using Meta Quest Dev Hub: Try This CLI Workflow</h2>
+                    <p class="story-card__body">A workflow note for developers who want a more direct path to iteration, deployment, and build management while working with Quest hardware.</p>
+                    <div class="story-card__badges">
+                        <span class="story-card__badge">Quest</span>
+                        <span class="story-card__badge">CLI</span>
+                    </div>
+                </div>
+                <div class="story-card__thumb">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80" alt="Terminal and development setup">
+                </div>
+            </a>
+
+            <a class="story-card" href="https://medium.com/@ateeque.solangi" target="_blank" rel="noopener noreferrer" data-reveal style="--delay: 0.2s;">
+                <div class="story-card__content">
+                    <p class="story-card__meta">Jul 2025 | XR Production</p>
+                    <h2 class="story-card__title">Cricket Has Never Felt This Real: Behind Final Overs</h2>
+                    <p class="story-card__body">A closer look at translating sports tension into VR and why immersion depends on feel, timing, and technical reliability just as much as visuals.</p>
+                    <div class="story-card__badges">
+                        <span class="story-card__badge">Sports VR</span>
+                        <span class="story-card__badge">Production</span>
+                    </div>
+                </div>
+                <div class="story-card__thumb">
+                    <img src="./assets/images/FinalOvers.jpeg" alt="Final Overs project image">
+                </div>
+            </a>
+
+            <a class="story-card" href="https://medium.com/@ateeque.solangi" target="_blank" rel="noopener noreferrer" data-reveal style="--delay: 0.25s;">
+                <div class="story-card__content">
+                    <p class="story-card__meta">Jul 2025 | Debugging Story</p>
+                    <h2 class="story-card__title">It Worked Perfectly Until I Sent It to Italy</h2>
+                    <p class="story-card__body">A debugging story about how regional edge cases, network assumptions, and shipping realities can expose problems that never appear in the local environment.</p>
+                    <div class="story-card__badges">
+                        <span class="story-card__badge">Debugging</span>
+                        <span class="story-card__badge">Networking</span>
+                    </div>
+                </div>
+                <div class="story-card__thumb">
+                    <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=900&q=80" alt="City lights at night">
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ateeque Ur Rehman | XR Programmer</title>
+    <meta name="description" content="Cyberpunk-inspired portfolio of Ateeque Ur Rehman, XR programmer focused on Unreal Engine, Meta Quest, hand tracking, and immersive training systems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="orb orb-a" aria-hidden="true"></div>
+    <div class="orb orb-b" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="top-nav" aria-label="Primary">
+            <a href="./index.html" class="brand-mark">
+                <span class="brand-mark__mono">AR</span>
+                <span class="brand-mark__text">Ateeque Rehman</span>
+            </a>
+
+            <div class="nav-cluster">
+                <div class="nav-menu">
+                    <a href="./index.html" aria-current="page">Home</a>
+                    <a href="./projects.html">Projects</a>
+                    <a href="./github.html">GitHub</a>
+                    <a href="./youtube.html">YouTube</a>
+                    <a href="./articles.html">Articles</a>
+                    <a href="./uetips.html">UE Tips</a>
+                </div>
+
+                <a href="./assets/pdf/Ateeque_Resume_UE5_Final.pdf" class="nav-resume" target="_blank" rel="noopener noreferrer">Resume</a>
+
+                <div class="nav-social">
+                    <a href="https://www.linkedin.com/in/ateequesolangi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://medium.com/@ateeque.solangi" target="_blank" rel="noopener noreferrer" aria-label="Medium profile">
+                        <i class="fab fa-medium" aria-hidden="true"></i>
+                    </a>
+                    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch between dark and light theme">
+                        <i class="fas fa-sun" aria-hidden="true"></i>
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="page-shell page-shell--home">
+        <section class="hero-panel panel panel--hero">
+            <div class="hero-copy" data-reveal style="--delay: 0.05s;">
+                <div class="hero-kicker">
+                    <span class="hero-kicker__line"></span>
+                    XR Programmer | Unreal Engine | Meta Quest
+                </div>
+
+                <h1 class="hero-title">Building immersive systems that feel cinematic, responsive, and production-ready.</h1>
+                <p class="hero-lead">
+                    I build XR products where interaction quality matters as much as performance. From hand tracking and gameplay loops to enterprise simulations and Quest optimization, I like making ambitious ideas feel natural inside the headset.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="./projects.html" class="btn btn--primary">Explore Projects</a>
+                    <a href="#timeline" class="btn btn--ghost">View Timeline</a>
+                </div>
+
+                <ul class="hero-stats" aria-label="Career highlights">
+                    <li>
+                        <strong>3+ Years</strong>
+                        <span>XR product development</span>
+                    </li>
+                    <li>
+                        <strong>Quest First</strong>
+                        <span>Standalone performance mindset</span>
+                    </li>
+                    <li>
+                        <strong>UE5 + C++</strong>
+                        <span>Systems built for shipping</span>
+                    </li>
+                </ul>
+
+                <div class="hero-core-stack" aria-label="Core stack">
+                    <div class="section-minihead">
+                        <span class="section-minihead__label">Core Stack</span>
+                        <span class="section-minihead__line"></span>
+                    </div>
+                    <div class="stack-marquee">
+                        <div class="stack-track">
+                            <span class="stack-chip"><img src="./assets/images/UnrealEngine.png" alt="Unreal Engine" class="skill-icon-img"> Unreal Engine 5</span>
+                            <span class="stack-chip"><img src="./assets/images/MetaQuest3.jpg" alt="Meta Quest" class="skill-icon-img"> Meta Quest</span>
+                            <span class="stack-chip"><i class="fas fa-vr-cardboard" aria-hidden="true"></i> OpenXR</span>
+                            <span class="stack-chip"><i class="fas fa-code" aria-hidden="true"></i> C++</span>
+                            <span class="stack-chip"><i class="fab fa-python" aria-hidden="true"></i> Python</span>
+                            <span class="stack-chip"><i class="fas fa-cubes" aria-hidden="true"></i> Blender</span>
+                            <span class="stack-chip"><i class="fas fa-hand-sparkles" aria-hidden="true"></i> Hand Tracking</span>
+                            <span class="stack-chip"><i class="fab fa-unity" aria-hidden="true"></i> Unity</span>
+                            <span class="stack-chip" aria-hidden="true"><img src="./assets/images/UnrealEngine.png" alt="" class="skill-icon-img"> Unreal Engine 5</span>
+                            <span class="stack-chip" aria-hidden="true"><img src="./assets/images/MetaQuest3.jpg" alt="" class="skill-icon-img"> Meta Quest</span>
+                            <span class="stack-chip" aria-hidden="true"><i class="fas fa-vr-cardboard" aria-hidden="true"></i> OpenXR</span>
+                            <span class="stack-chip" aria-hidden="true"><i class="fas fa-code" aria-hidden="true"></i> C++</span>
+                            <span class="stack-chip" aria-hidden="true"><i class="fab fa-python" aria-hidden="true"></i> Python</span>
+                            <span class="stack-chip" aria-hidden="true"><i class="fas fa-cubes" aria-hidden="true"></i> Blender</span>
+                            <span class="stack-chip" aria-hidden="true"><i class="fas fa-hand-sparkles" aria-hidden="true"></i> Hand Tracking</span>
+                            <span class="stack-chip" aria-hidden="true"><i class="fab fa-unity" aria-hidden="true"></i> Unity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual" data-reveal style="--delay: 0.15s;">
+                <div class="portrait-shell">
+                    <div class="portrait-badge">
+                        <span class="portrait-badge__pulse"></span>
+                        Available for XR gameplay, simulation, and optimization work
+                    </div>
+                    <div class="portrait-frame">
+                        <img src="./assets/images/ProfileHeadshot.jpg" alt="Portrait of Ateeque Ur Rehman" class="profile-img" loading="eager">
+                    </div>
+                    <div class="portrait-signal-card">
+                        <div class="portrait-signal-card__label">Current Focus</div>
+                        <div class="portrait-signal-card__value">Hand tracked interaction systems and Quest-ready immersive products.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="timeline-panel panel">
+            <div class="section-head" data-reveal>
+                <div>
+                    <p class="section-kicker">Career Timeline</p>
+                    <h2 class="section-title">From prototype energy to production XR systems.</h2>
+                </div>
+                <p class="section-copy">A fast look at the path that shaped my work: gameplay instincts, performance constraints, enterprise rigor, and the interaction design needed to make XR feel believable.</p>
+            </div>
+
+            <div class="timeline-track">
+                <article class="timeline-event" data-reveal style="--delay: 0.05s; --float-delay: 0s;">
+                    <span class="timeline-year">2021</span>
+                    <span class="timeline-phase">Phase 01</span>
+                    <h3>Built the first VR prototypes</h3>
+                    <p>Started translating ideas into Unreal scenes, experimenting with movement, interaction feel, and what makes players trust a virtual space.</p>
+                    <div class="timeline-tags">
+                        <span>Blueprints</span>
+                        <span>VR Basics</span>
+                        <span>Interaction Loops</span>
+                    </div>
+                </article>
+
+                <article class="timeline-event" data-reveal style="--delay: 0.1s; --float-delay: 1.2s;">
+                    <span class="timeline-year">2022</span>
+                    <span class="timeline-phase">Phase 02</span>
+                    <h3>Shifted into Quest-first production thinking</h3>
+                    <p>Optimization became part of the design process. Interaction systems had to stay tactile without sacrificing framerate or device limits.</p>
+                    <div class="timeline-tags">
+                        <span>Quest</span>
+                        <span>Profiling</span>
+                        <span>Standalone XR</span>
+                    </div>
+                </article>
+
+                <article class="timeline-event" data-reveal style="--delay: 0.15s; --float-delay: 0.4s;">
+                    <span class="timeline-year">2023</span>
+                    <span class="timeline-phase">Phase 03</span>
+                    <h3>Expanded into enterprise and training simulation</h3>
+                    <p>Worked on immersive systems that needed more than visual polish: procedural clarity, user trust, repeatable flows, and business reliability.</p>
+                    <div class="timeline-tags">
+                        <span>Medical Sim</span>
+                        <span>Enterprise XR</span>
+                        <span>UX in Headsets</span>
+                    </div>
+                </article>
+
+                <article class="timeline-event" data-reveal style="--delay: 0.2s; --float-delay: 1.8s;">
+                    <span class="timeline-year">2024</span>
+                    <span class="timeline-phase">Phase 04</span>
+                    <h3>Focused on advanced interaction systems</h3>
+                    <p>Leaning harder into hand tracking, systemic gameplay, telemetry, and reusable tooling so teams can ship faster with less friction.</p>
+                    <div class="timeline-tags">
+                        <span>Hand Tracking</span>
+                        <span>Telemetry</span>
+                        <span>Reusable Tooling</span>
+                    </div>
+                </article>
+
+                <article class="timeline-event timeline-event--now" data-reveal style="--delay: 0.25s; --float-delay: 0.8s;">
+                    <span class="timeline-year">Now</span>
+                    <span class="timeline-phase">Current Signal</span>
+                    <h3>Designing immersive products that feel high-end and stable</h3>
+                    <p>Today the goal is simple: interactions that feel premium, visuals that look intentional, and production pipelines that make ambitious XR actually shippable.</p>
+                    <div class="timeline-tags">
+                        <span>UE5</span>
+                        <span>Gameplay</span>
+                        <span>Training Systems</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="dashboard-grid" aria-label="Portfolio sections">
+            <article class="projects-panel panel" data-reveal style="--delay: 0.05s;">
+                <div class="section-head section-head--compact">
+                    <div>
+                        <p class="section-kicker">Featured Work</p>
+                        <h2 class="section-title section-title--small">Latest Projects</h2>
+                    </div>
+                    <div class="carousel-nav" aria-label="Project navigation">
+                        <button id="prevBtn" class="nav-btn" type="button" aria-label="Previous project">
+                            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <button id="nextBtn" class="nav-btn" type="button" aria-label="Next project">
+                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-carousel">
+                    <div id="project-card" class="featured-project-card" aria-live="polite">
+                        <div class="proj-loader">Loading projects...</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="github-panel panel" data-reveal style="--delay: 0.1s;">
+                <div class="section-head section-head--compact">
+                    <div>
+                        <p class="section-kicker">Code</p>
+                        <h2 class="section-title section-title--small">GitHub Repositories</h2>
+                    </div>
+                </div>
+
+                <div class="signal-list">
+                    <a class="signal-card" href="./github.html">
+                        <div class="signal-card__row">
+                            <h3>KYNETIK-VR</h3>
+                            <span class="signal-pill">C++</span>
+                        </div>
+                        <p>Hand-tracking wave shooter tuned for short sessions and replayable intensity.</p>
+                    </a>
+
+                    <a class="signal-card" href="./github.html">
+                        <div class="signal-card__row">
+                            <h3>GraspXR-SDK</h3>
+                            <span class="signal-pill">Blueprint</span>
+                        </div>
+                        <p>Interaction toolkit for enterprise XR simulations with natural gesture handling.</p>
+                    </a>
+
+                    <a class="signal-card" href="./github.html">
+                        <div class="signal-card__row">
+                            <h3>VR-Telemetry</h3>
+                            <span class="signal-pill">Python</span>
+                        </div>
+                        <p>Runtime metrics, profiling insights, and performance support for standalone VR builds.</p>
+                    </a>
+                </div>
+
+                <a class="view-link" href="./github.html">View all repos <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+
+            <article class="articles-panel panel" data-reveal style="--delay: 0.15s;">
+                <div class="section-head section-head--compact">
+                    <div>
+                        <p class="section-kicker">Writing</p>
+                        <h2 class="section-title section-title--small">Latest Insights</h2>
+                    </div>
+                </div>
+
+                <div class="signal-list">
+                    <a class="signal-card signal-card--story" href="./articles.html">
+                        <span class="signal-meta">Jul 2025 | Technical Guide</span>
+                        <h3>Getting Started with VR Development in Unreal Engine</h3>
+                        <p>A practical path into immersive development without losing time to setup friction.</p>
+                    </a>
+
+                    <a class="signal-card signal-card--story" href="./articles.html">
+                        <span class="signal-meta">Aug 2025 | AI Philosophy</span>
+                        <h3>Why Common Sense Comes First and AI Follows</h3>
+                        <p>A clearer way to think about judgment, tools, and where automation actually helps.</p>
+                    </a>
+
+                    <a class="signal-card signal-card--story" href="./articles.html">
+                        <span class="signal-meta">Jul 2025 | Dev Tooling</span>
+                        <h3>Stop Using Meta Quest Dev Hub: Try This CLI Workflow</h3>
+                        <p>A deployment workflow built for fewer clicks and faster iteration loops.</p>
+                    </a>
+                </div>
+
+                <a class="view-link" href="./articles.html">View all articles <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+
+            <article class="youtube-panel panel" data-reveal style="--delay: 0.2s;">
+                <div class="section-head section-head--compact">
+                    <div>
+                        <p class="section-kicker">Video</p>
+                        <h2 class="section-title section-title--small">YouTube Highlights</h2>
+                    </div>
+                </div>
+
+                <div class="empty-state-card">
+                    <div class="empty-state-card__icon">
+                        <i class="fas fa-satellite-dish" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Signal not published yet</h3>
+                        <p>This section is ready for dedicated highlight videos. For now, project demos are surfaced through the latest projects panel and project pages.</p>
+                    </div>
+                </div>
+
+                <a class="view-link" href="./youtube.html">Open video page <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+
+            <article class="tips-panel panel" data-reveal style="--delay: 0.25s;">
+                <div class="section-head section-head--compact">
+                    <div>
+                        <p class="section-kicker">Knowledge Base</p>
+                        <h2 class="section-title section-title--small">UE Dev Tips</h2>
+                    </div>
+                </div>
+
+                <p class="panel-copy">Small, practical patterns for building cleaner interactions, better performance paths, and more reliable XR gameplay architecture.</p>
+
+                <a class="btn btn--ghost btn--full" href="./uetips.html">Open Tips</a>
+            </article>
+
+            <article class="contact-panel panel" id="contact" data-reveal style="--delay: 0.3s;">
+                <div class="contact-layout">
+                    <div class="contact-copy-block">
+                        <p class="section-kicker">Collaboration</p>
+                        <h2 class="section-title section-title--small">Let&apos;s build something that feels impossible until it works.</h2>
+                        <p class="panel-copy">If you are shipping XR gameplay, enterprise simulations, or interaction-heavy prototypes, send over the brief. I typically reply within 24 hours.</p>
+
+                        <div class="contact-pills">
+                            <span>Gameplay Systems</span>
+                            <span>Hand Tracking</span>
+                            <span>Quest Optimization</span>
+                            <span>Training Sim UX</span>
+                        </div>
+                    </div>
+
+                    <form action="https://formsubmit.co/ateeque.solangi@gmail.com" method="POST" class="contact-form">
+                        <input type="hidden" name="_subject" value="New Portfolio Contact">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" id="fullname" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about the product, platform, and where you need support." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary contact-submit">Send Message</button>
+                    </form>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>XR systems, gameplay feel, and performance minded design.</p>
+    </footer>
+
+    <div id="videoModal" class="video-modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-label="Project video">
+            <button class="close-modal" type="button" aria-label="Close video">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="video-container">
+                <iframe
+                    id="videoIframe"
+                    title="Project video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
