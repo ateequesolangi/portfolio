@@ -1,66 +1,103 @@
 const portfolioProjects = [
     {
-        id: "kynetik",
-        title: "KYNETIK",
-        role: "Founder and Creator",
-        description: "A hyper-casual hand-tracking wave shooter designed for fast onboarding, repeatable intensity, and zero wasted friction inside the headset.",
+        id: "electricityvr",
+        title: "ElectricityVR",
+        role: "Technical Lead & Sole Developer",
+        timeframe: "Delivered 2024 / Meta Quest",
+        platform: "Meta Quest",
+        metric: "20+ field scenarios",
+        summary: "Field operations simulator built for a government institute with branching task logic, safety-critical interactions, and realistic site simulation behavior.",
+        highlights: [
+            "Built full product end-to-end as sole developer from concept to delivery.",
+            "Implemented branching workflows, custom input mappings, and dynamic safety feedback loops.",
+            "Engineered session design supporting 20 concurrent trainees in practical training cycles."
+        ],
+        outcome: "Production simulator delivered with 20+ practical scenarios and concurrent trainee support.",
         image: "./assets/images/MetaQuest3.jpg",
-        platform: "Meta Quest",
-        tags: ["VR Game", "Hand Tracking", "Quest"],
-        link: "https://www.meta.com/experiences/3753844808017398/",
-        videoId: "8GoZydU9ibM"
-    },
-    {
-        id: "graspxr",
-        title: "GRASP XR",
-        role: "Technical Lead",
-        description: "An interaction-heavy XR framework for enterprise simulations, focused on natural gestures, stable interaction logic, and clean user flow design.",
-        image: "./assets/images/GraspXR.jpg",
-        platform: "Meta Quest",
-        tags: ["Enterprise", "UE5", "Interaction Design"],
-        link: "https://graspxr.app/",
-        videoId: "8GoZydU9ibM"
-    },
-    {
-        id: "final-overs",
-        title: "FINAL OVERS",
-        role: "XR Programmer",
-        description: "A performance minded VR cricket experience tuned for standalone hardware, realistic physics, and responsive gameplay under pressure.",
-        image: "./assets/images/FinalOvers.jpeg",
-        platform: "Meta Quest",
-        tags: ["Sports", "Physics", "Optimization"],
-        link: "https://www.meta.com/experiences/3753844808017398/",
-        videoId: "n_l357e-Buc"
-    },
-    {
-        id: "beyond-the-valley",
-        title: "BEYOND THE VALLEY",
-        role: "Unreal Developer",
-        description: "A visually rich environment project blending VFX, atmospheric lighting, and real-time scene composition for a polished cinematic look.",
-        image: "./assets/images/BeyondTheValley.jpg",
-        platform: "Steam",
-        tags: ["Environment", "VFX", "Unreal Engine"],
-        link: "https://store.steampowered.com/app/3889780/The_Valley_Beyond/",
+        tags: ["Simulation", "Government Client", "Meta Quest"],
+        link: null,
         videoId: null
     },
     {
-        id: "medicvr",
-        title: "MEDIC VR",
-        role: "Core Developer",
-        description: "A medical simulation workflow built for procedural clarity, repeatable training, and high-stakes decision making in immersive environments.",
-        image: "./assets/images/MedicVR.png",
+        id: "medic-vr",
+        title: "Medic VR",
+        role: "Scenario Developer",
+        timeframe: "Shipped 2023 / Meta Quest",
         platform: "Meta Quest",
-        tags: ["Medical", "Simulation", "Training"],
+        metric: "15+ scenarios | 500+ nurse users",
+        summary: "Medical training platform with procedure-focused scenario logic, guided workflows, and custom interaction layers aligned with clinical requirements.",
+        highlights: [
+            "Delivered 15+ procedural training scenarios with dynamic event branching.",
+            "Built workflow logic around user guidance, validation, and repeatable procedural flow.",
+            "Contributed to platform used by 500+ nurse users in training contexts."
+        ],
+        outcome: "Scaled medical training scenarios with repeatable process quality across high-volume users.",
+        image: "./assets/images/MedicVR.png",
+        tags: ["Medical Training", "Procedure Design", "XR UX"],
         link: "https://www.youtube.com/watch?v=g7u5WX0EFgM",
         videoId: "g7u5WX0EFgM"
+    },
+    {
+        id: "graspxr",
+        title: "GraspXR",
+        role: "Scenario Developer",
+        timeframe: "Shipped 2023-24 / Quest + PC VR",
+        platform: "Quest + PC VR",
+        metric: "5+ enterprise scenarios",
+        summary: "Enterprise VR training platform extended with multi-industry scenarios, shared simulation architecture, AI-driven feedback hooks, and multilingual content flow.",
+        highlights: [
+            "Authored scenario tracks for healthcare, industrial, and education use cases.",
+            "Integrated AI-driven feedback and multilingual delivery pipeline requirements.",
+            "Worked on top of shared architecture for maintainable enterprise scenario deployment."
+        ],
+        outcome: "Strengthened enterprise scenario breadth across multiple industry verticals.",
+        image: "./assets/images/GraspXR.jpg",
+        tags: ["Enterprise XR", "Training", "Quest + PC"],
+        link: "https://graspxr.app",
+        videoId: null
+    },
+    {
+        id: "final-overs",
+        title: "The Final Overs",
+        role: "Systems Developer",
+        timeframe: "Shipped 2023 / Meta Quest 2-3",
+        platform: "Meta Quest 2-3",
+        metric: "40M+ balls | 4.5 Quest rating",
+        summary: "Cricket title support through telemetry, analytics, and in-game feedback systems built on REST APIs and event logging for v2.0 decision making.",
+        highlights: [
+            "Implemented gameplay telemetry and event-logging architecture.",
+            "Integrated real-time dashboards to track engagement and session-level behavior.",
+            "Contributed systems used in v2.0 update path and live product iteration."
+        ],
+        outcome: "v2.0 launch supported with 40M+ balls played and strong Quest store performance.",
+        image: "./assets/images/FinalOvers.jpeg",
+        tags: ["Telemetry", "Analytics", "Live Product"],
+        link: "https://www.meta.com/experiences/final-overs-vr-cricket/3753844808017398/",
+        videoId: null
+    },
+    {
+        id: "valley-beyond",
+        title: "The Valley Beyond",
+        role: "UE Developer",
+        timeframe: "Shipped Dec 2025 / PC Steam",
+        platform: "PC Steam",
+        metric: "Shipped title",
+        summary: "UE5 gameplay and environment contributions for a PC puzzle-adventure title released on Steam.",
+        highlights: [
+            "Contributed gameplay logic and environment-side systems for production release.",
+            "Worked within shipping constraints for stability and maintainability.",
+            "Supported final delivery path for a Steam-published title."
+        ],
+        outcome: "Shipped puzzle-adventure project on Steam in December 2025.",
+        image: "./assets/images/BeyondTheValley.jpg",
+        tags: ["Steam", "Gameplay", "Environment"],
+        link: "https://store.steampowered.com/app/1578730/Beyond_The_Valley/",
+        videoId: null
     }
 ];
 
 const THEME_KEY = "portfolio-theme";
-const AUTOPLAY_MS = 7600;
 
-let currentIndex = 0;
-let autoplayTimer = null;
 let revealObserver = null;
 let glowRaf = null;
 
@@ -68,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initThemeToggle();
     initHeaderState();
     initVideoModal();
-    initCarousel();
+    initProjectReflectionBoard();
     initProjectsCatalog();
     initRevealAnimations();
     initPointerGlow();
@@ -121,117 +158,103 @@ function initHeaderState() {
     window.addEventListener("scroll", syncHeader, { passive: true });
 }
 
-function initCarousel() {
-    const card = document.getElementById("project-card");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
+function initProjectReflectionBoard() {
+    const list = document.getElementById("projectSwitchList");
+    const panel = document.getElementById("projectReflection");
 
-    if (!card || !prevBtn || !nextBtn) {
+    if (!list || !panel) {
         return;
     }
 
-    renderProject(currentIndex);
-
-    prevBtn.addEventListener("click", () => {
-        navigateTo(currentIndex - 1);
-    });
-
-    nextBtn.addEventListener("click", () => {
-        navigateTo(currentIndex + 1);
-    });
-
-    card.addEventListener("mouseenter", stopAutoplay);
-    card.addEventListener("mouseleave", startAutoplay);
-
-    document.addEventListener("visibilitychange", () => {
-        if (document.hidden) {
-            stopAutoplay();
-        } else {
-            startAutoplay();
-        }
-    });
-
-    startAutoplay();
-}
-
-function navigateTo(index) {
-    if (index < 0) {
-        currentIndex = portfolioProjects.length - 1;
-    } else {
-        currentIndex = index % portfolioProjects.length;
-    }
-
-    renderProject(currentIndex);
-}
-
-function renderProject(index) {
-    const card = document.getElementById("project-card");
-    if (!card) {
-        return;
-    }
-
-    const project = portfolioProjects[index];
-    const actionLabel = getProjectActionLabel(project);
-    const actionIcon = project.videoId ? "fas fa-play" : "fas fa-arrow-up-right-from-square";
-    const actionText = project.videoId ? "Play demo" : "Open project";
-    const dots = portfolioProjects
-        .map((_, dotIndex) => {
-            const activeClass = dotIndex === index ? "active" : "";
-            return `<button class="dot ${activeClass}" type="button" data-index="${dotIndex}" aria-label="Go to project ${dotIndex + 1}"></button>`;
+    list.innerHTML = portfolioProjects
+        .map((project, index) => {
+            const activeClass = index === 0 ? "is-active" : "";
+            return `
+                <button
+                    type="button"
+                    class="project-switch ${activeClass}"
+                    role="tab"
+                    aria-selected="${index === 0 ? "true" : "false"}"
+                    data-project-tab="${index}">
+                    <span class="project-switch__title">${project.title}</span>
+                    <span class="project-switch__metric">${project.metric}</span>
+                </button>
+            `;
         })
         .join("");
-    const tags = project.tags.map((tag) => `<span class="project-tag">${tag}</span>`).join("");
 
-    card.classList.add("is-updating");
+    const tabs = list.querySelectorAll("[data-project-tab]");
 
-    window.setTimeout(() => {
-        card.innerHTML = `
-            <figure class="project-media project-action" data-project-action="${index}" role="button" tabindex="0" aria-label="${actionLabel}">
-                <img src="${project.image}" alt="${project.title}" class="project-image" loading="lazy">
-                <span class="${project.videoId ? "media-play" : "media-open"}" aria-hidden="true">
-                    <i class="${actionIcon}" aria-hidden="true"></i>
-                </span>
-                <figcaption class="project-platform">${project.platform}</figcaption>
-            </figure>
-            <div class="project-body">
-                <div class="project-head">
-                    <div class="project-title-group">
-                        <h3>${project.title}</h3>
-                        <p class="project-role">${project.role}</p>
-                    </div>
-                    <button type="button" class="project-link" data-project-action="${index}" aria-label="${actionLabel}">
-                        <i class="${actionIcon}" aria-hidden="true"></i>
-                    </button>
-                </div>
-                <p class="project-description">${project.description}</p>
-                <div class="project-foot">
-                    <div class="project-tags">${tags}</div>
-                    <div class="project-dots" aria-label="Project navigation dots">${dots}</div>
-                </div>
-            </div>
-        `;
+    const activate = (index) => {
+        const project = portfolioProjects[index];
+        if (!project) {
+            return;
+        }
 
-        bindProjectActions(card);
-        bindCarouselDots(card);
-        card.classList.remove("is-updating");
-    }, 140);
-}
+        tabs.forEach((tab) => {
+            const tabIndex = Number.parseInt(tab.getAttribute("data-project-tab"), 10);
+            const isActive = tabIndex === index;
+            tab.classList.toggle("is-active", isActive);
+            tab.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
 
-function bindCarouselDots(card) {
-    const dots = card.querySelectorAll(".dot[data-index]");
+        renderProjectReflection(panel, index);
+    };
 
-    dots.forEach((dot) => {
-        dot.addEventListener("click", () => {
-            const targetIndex = Number.parseInt(dot.getAttribute("data-index"), 10);
-            if (Number.isNaN(targetIndex)) {
-                return;
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+            const tabIndex = Number.parseInt(tab.getAttribute("data-project-tab"), 10);
+            if (!Number.isNaN(tabIndex)) {
+                activate(tabIndex);
             }
-
-            currentIndex = targetIndex;
-            renderProject(currentIndex);
-            startAutoplay();
         });
     });
+
+    activate(0);
+}
+
+function renderProjectReflection(container, index) {
+    const project = portfolioProjects[index];
+    if (!container || !project) {
+        return;
+    }
+
+    const action = getProjectActionMeta(project);
+    const highlights = project.highlights
+        .map((item) => `<li>${item}</li>`)
+        .join("");
+    const mediaAttrs = action.enabled
+        ? `data-project-action="${index}" role="button" tabindex="0" aria-label="${action.label}"`
+        : `aria-label="${action.label}"`;
+    const buttonAttrs = action.enabled
+        ? `data-project-action="${index}" aria-label="${action.label}"`
+        : `disabled aria-disabled="true"`;
+
+    container.innerHTML = `
+        <figure class="reflection-media ${action.enabled ? "" : "is-locked"}" ${mediaAttrs}>
+            <img src="${project.image}" alt="${project.title}" loading="lazy">
+            <span class="reflection-media__badge">${project.platform}</span>
+        </figure>
+        <div class="reflection-body">
+            <div class="reflection-head">
+                <div>
+                    <h3>${project.title}</h3>
+                    <p class="reflection-role">${project.role} | ${project.timeframe}</p>
+                </div>
+                <span class="reflection-metric">${project.metric}</span>
+            </div>
+            <p class="reflection-summary">${project.summary}</p>
+            <ul class="reflection-highlights">${highlights}</ul>
+            <p class="reflection-outcome"><strong>Outcome:</strong> ${project.outcome}</p>
+            <div class="reflection-actions">
+                <button type="button" class="btn btn--primary reflection-action-btn" ${buttonAttrs}>
+                    <i class="${action.icon}" aria-hidden="true"></i> ${action.text}
+                </button>
+            </div>
+        </div>
+    `;
+
+    bindProjectActions(container);
 }
 
 function initProjectsCatalog() {
@@ -242,26 +265,30 @@ function initProjectsCatalog() {
 
     catalog.innerHTML = portfolioProjects
         .map((project, index) => {
-            const actionText = project.videoId ? "Watch demo" : "Open project";
-            const signalIcon = project.videoId ? "fas fa-play" : "fas fa-arrow-up-right-from-square";
+            const action = getProjectActionMeta(project);
             const badges = project.tags.map((tag) => `<span class="catalog-card__badge">${tag}</span>`).join("");
             const delay = `${0.05 + index * 0.04}s`;
+            const cardAttrs = action.enabled
+                ? `data-project-action="${index}" role="button" tabindex="0" aria-label="${action.label}"`
+                : `aria-label="${action.label}"`;
 
             return `
-                <article class="catalog-card" data-project-action="${index}" role="button" tabindex="0" aria-label="${getProjectActionLabel(project)}" data-reveal style="--delay: ${delay};">
+                <article class="catalog-card ${action.enabled ? "" : "catalog-card--locked"}" ${cardAttrs} data-reveal style="--delay: ${delay};">
                     <div class="catalog-card__media">
                         <img src="${project.image}" alt="${project.title}" loading="lazy">
                         <div class="catalog-card__overlay"></div>
-                        <span class="catalog-card__signal" aria-hidden="true"><i class="${signalIcon}"></i></span>
+                        <span class="catalog-card__signal" aria-hidden="true"><i class="${action.icon}"></i></span>
                         <span class="catalog-card__platform">${project.platform}</span>
                     </div>
                     <div class="catalog-card__content">
                         <div class="catalog-card__kicker">${project.role}</div>
                         <h3 class="catalog-card__title">${project.title}</h3>
-                        <p class="catalog-card__description">${project.description}</p>
+                        <p class="catalog-card__description">${project.summary}</p>
+                        <p class="catalog-card__metric">${project.metric}</p>
+                        <p class="catalog-card__outcome">${project.outcome}</p>
                         <div class="catalog-card__footer">
                             <div class="catalog-card__badges">${badges}</div>
-                            <span class="catalog-card__action">${actionText} <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                            <span class="catalog-card__action">${action.text} <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
                         </div>
                     </div>
                 </article>
@@ -286,7 +313,7 @@ function bindProjectActions(root) {
             openProjectAction(projectIndex);
         });
 
-        if (target.matches(".project-media, .catalog-card")) {
+        if (target.matches(".reflection-media, .catalog-card")) {
             target.addEventListener("keydown", (event) => {
                 if (event.key === "Enter" || event.key === " ") {
                     event.preventDefault();
@@ -316,29 +343,31 @@ function openProjectAction(index) {
     }
 }
 
-function getProjectActionLabel(project) {
-    return project.videoId ? `Play demo for ${project.title}` : `Open ${project.title}`;
-}
-
-function startAutoplay() {
-    stopAutoplay();
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        return;
+function getProjectActionMeta(project) {
+    if (project.videoId) {
+        return {
+            icon: "fas fa-play",
+            text: "Play demo",
+            label: `Play demo for ${project.title}`,
+            enabled: true
+        };
     }
 
-    autoplayTimer = window.setInterval(() => {
-        navigateTo(currentIndex + 1);
-    }, AUTOPLAY_MS);
-}
-
-function stopAutoplay() {
-    if (!autoplayTimer) {
-        return;
+    if (project.link) {
+        return {
+            icon: "fas fa-arrow-up-right-from-square",
+            text: "Open project",
+            label: `Open ${project.title}`,
+            enabled: true
+        };
     }
 
-    window.clearInterval(autoplayTimer);
-    autoplayTimer = null;
+    return {
+        icon: "fas fa-lock",
+        text: "NDA details",
+        label: `${project.title} has no public link`,
+        enabled: false
+    };
 }
 
 function initVideoModal() {
