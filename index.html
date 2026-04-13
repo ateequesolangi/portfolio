@@ -112,6 +112,153 @@
             </div>
         </section>
 
+        <section class="about-strengths panel" data-reveal style="--delay: 0.04s;">
+            <div class="about-strengths__about">
+                <p class="section-kicker">About Me</p>
+                <h2 class="section-title section-title--small">VR/XR developer focused on shipping practical Unreal Engine systems.</h2>
+                <p class="panel-copy">I have 3+ years building production VR simulations, enterprise training products, and game systems across Meta Quest and PC VR. My strongest contribution is bridging architecture quality with shipping reality.</p>
+                <p class="panel-copy">My work centers on UE4 to UE5 migration, XR interaction systems, multiplayer/session logic, and performance optimization that holds up on standalone hardware.</p>
+                <div class="about-strengths__stats">
+                    <div class="about-strengths__stat"><strong>5+</strong><span>Commercial Releases</span></div>
+                    <div class="about-strengths__stat"><strong>40M+</strong><span>Balls Played (TFO)</span></div>
+                    <div class="about-strengths__stat"><strong>72 FPS</strong><span>Quest Target Restored</span></div>
+                </div>
+            </div>
+
+            <aside class="about-strengths__strengths">
+                <p class="section-kicker">Core Strengths</p>
+                <p class="panel-copy">The areas I usually own end-to-end when a UE5, VR, or XR project needs stronger technical direction.</p>
+                <div class="strength-card-list">
+                    <article class="strength-card">
+                        <div class="strength-card__icon"><i class="fas fa-vr-cardboard" aria-hidden="true"></i></div>
+                        <div>
+                            <h3>VR/XR Gameplay</h3>
+                            <p>Meta Quest 2/3, OpenXR, hand tracking, interaction design, and physics-driven systems.</p>
+                        </div>
+                    </article>
+                    <article class="strength-card">
+                        <div class="strength-card__icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+                        <div>
+                            <h3>Architecture</h3>
+                            <p>Blueprint systems, C++ tooling, plugin compatibility, and data-driven UE5 pipelines.</p>
+                        </div>
+                    </article>
+                    <article class="strength-card">
+                        <div class="strength-card__icon"><i class="fas fa-microchip" aria-hidden="true"></i></div>
+                        <div>
+                            <h3>Optimization</h3>
+                            <p>Quest profiling, Unreal Insights, GPU analysis, Tick reduction, and draw-call budgeting.</p>
+                        </div>
+                    </article>
+                </div>
+            </aside>
+        </section>
+
+        <section class="experience-detail panel" data-reveal style="--delay: 0.08s;">
+            <div class="section-head">
+                <div>
+                    <p class="section-kicker">Experience</p>
+                    <h2 class="section-title">Career Timeline</h2>
+                </div>
+            </div>
+
+            <div class="experience-list">
+                <article class="experience-item">
+                    <div class="experience-item__meta">
+                        <span class="experience-item__dot" aria-hidden="true"></span>
+                        <h3>Unreal Engine Expert · Technical Lead</h3>
+                        <p class="experience-item__company">Mixeal</p>
+                        <p class="experience-item__date">Oct 2022 - Present</p>
+                    </div>
+                    <ul class="experience-item__details">
+                        <li>Led full UE4.27 to UE5 migration for a live VR production title and restored stable 72 FPS targets on Quest 2 after module/plugin refactors.</li>
+                        <li>Built ElectricityVR end-to-end with 20+ field operation scenarios and designed session flow for 20 concurrent trainees.</li>
+                        <li>Developed 15+ procedural medical scenarios for Medic VR and additional enterprise scenarios for GraspXR.</li>
+                        <li>Implemented telemetry and REST event pipelines for The Final Overs to support v2.0 gameplay decisions with live product data.</li>
+                    </ul>
+                </article>
+
+                <article class="experience-item">
+                    <div class="experience-item__meta">
+                        <span class="experience-item__dot" aria-hidden="true"></span>
+                        <h3>Unreal Engine / VR Developer</h3>
+                        <p class="experience-item__company">Mixeal</p>
+                        <p class="experience-item__date">Jan 2022 - Oct 2022</p>
+                    </div>
+                    <ul class="experience-item__details">
+                        <li>Shipped early VR projects and established production baseline for Quest-targeted pipelines.</li>
+                        <li>Resolved rendering bottlenecks on standalone hardware using profiling, shader cleanup, and architecture-level optimizations.</li>
+                        <li>Implemented advanced interaction features including hand tracking, eye tracking, and passthrough AR with controller fallback compatibility.</li>
+                    </ul>
+                </article>
+
+                <article class="experience-item">
+                    <div class="experience-item__meta">
+                        <span class="experience-item__dot" aria-hidden="true"></span>
+                        <h3>Web Development Teacher (Volunteer)</h3>
+                        <p class="experience-item__company">GETS (Non-Profit)</p>
+                        <p class="experience-item__date">Jan 2019 - Present</p>
+                    </div>
+                    <ul class="experience-item__details">
+                        <li>Founded and taught curriculum for beginner-to-intermediate web development training.</li>
+                        <li>Mentored learners through project-based exercises focused on practical implementation and problem solving.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="clips-section panel" data-reveal style="--delay: 0.12s;">
+            <div class="clips-section__head">
+                <div>
+                    <p class="section-kicker">Beyond The Build</p>
+                    <h2 class="section-title section-title--small">Insta Reels</h2>
+                    <p class="panel-copy">A small public window into videos where I appear during work sessions and project updates.</p>
+                </div>
+                <div class="clips-nav">
+                    <button id="clipsPrev" class="nav-btn" type="button" aria-label="Previous clips">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    </button>
+                    <button id="clipsNext" class="nav-btn" type="button" aria-label="Next clips">
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="clipsTrack" class="clips-track">
+                <article class="clip-card">
+                    <div class="clip-card__meta"><span>Reel 01</span><a href="https://www.instagram.com/thefinalovers/" target="_blank" rel="noopener noreferrer">Open <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+                    <a class="clip-card__media" href="https://www.instagram.com/thefinalovers/" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/images/ProfileHeadshot.jpg" alt="Instagram reel preview 1">
+                        <span class="clip-card__play"><i class="fas fa-play" aria-hidden="true"></i></span>
+                    </a>
+                </article>
+
+                <article class="clip-card">
+                    <div class="clip-card__meta"><span>Reel 02</span><a href="https://www.instagram.com/ateeque.solangi/" target="_blank" rel="noopener noreferrer">Open <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+                    <a class="clip-card__media" href="https://www.instagram.com/ateeque.solangi/" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/images/FinalOvers.jpeg" alt="Instagram reel preview 2">
+                        <span class="clip-card__play"><i class="fas fa-play" aria-hidden="true"></i></span>
+                    </a>
+                </article>
+
+                <article class="clip-card">
+                    <div class="clip-card__meta"><span>Reel 03</span><a href="https://www.instagram.com/ateeque.solangi/" target="_blank" rel="noopener noreferrer">Open <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+                    <a class="clip-card__media" href="https://www.instagram.com/ateeque.solangi/" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/images/GraspXR.jpg" alt="Instagram reel preview 3">
+                        <span class="clip-card__play"><i class="fas fa-play" aria-hidden="true"></i></span>
+                    </a>
+                </article>
+
+                <article class="clip-card">
+                    <div class="clip-card__meta"><span>Reel 04</span><a href="https://www.instagram.com/ateeque.solangi/" target="_blank" rel="noopener noreferrer">Open <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+                    <a class="clip-card__media" href="https://www.instagram.com/ateeque.solangi/" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/images/MetaQuest3.jpg" alt="Instagram reel preview 4">
+                        <span class="clip-card__play"><i class="fas fa-play" aria-hidden="true"></i></span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
         <section class="compact-board" aria-label="Work reflection board">
             <article class="panel project-reflection-panel" data-reveal style="--delay: 0.05s;">
                 <div class="section-head section-head--compact">
@@ -160,7 +307,7 @@
                 </ul>
             </article>
 
-            <article class="panel timeline-mini-panel" data-reveal style="--delay: 0.15s;">
+            <article class="panel timeline-mini-panel timeline-mini-panel--featured" data-reveal style="--delay: 0.15s;">
                 <div class="section-head section-head--compact">
                     <div>
                         <p class="section-kicker">Timeline</p>
@@ -172,16 +319,19 @@
                         <span class="timeline-mini__year">Oct 2022 - Present</span>
                         <h3>Unreal Engine Expert | Technical Lead at Mixeal</h3>
                         <p>UE5 migration leadership, XR systems, simulation architecture, and Quest-focused performance work.</p>
+                        <div class="timeline-mini__pulse" aria-hidden="true"></div>
                     </li>
                     <li>
                         <span class="timeline-mini__year">2024</span>
                         <h3>ElectricityVR Delivery</h3>
                         <p>Built and delivered 20+ practical field-operation scenarios with concurrent trainee support.</p>
+                        <div class="timeline-mini__pulse" aria-hidden="true"></div>
                     </li>
                     <li>
                         <span class="timeline-mini__year">Dec 2025</span>
                         <h3>The Valley Beyond Shipped on Steam</h3>
                         <p>Contributed UE5 gameplay and environment systems for release of a PC puzzle-adventure title.</p>
+                        <div class="timeline-mini__pulse" aria-hidden="true"></div>
                     </li>
                 </ol>
             </article>

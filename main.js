@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initThemeToggle();
     initHeaderState();
     initVideoModal();
+    initClipsCarousel();
     initProjectReflectionBoard();
     initProjectsCatalog();
     initRevealAnimations();
@@ -493,4 +494,24 @@ function initPointerGlow() {
     if (!glowRaf) {
         glowRaf = window.requestAnimationFrame(animate);
     }
+}
+
+function initClipsCarousel() {
+    const track = document.getElementById("clipsTrack");
+    const prev = document.getElementById("clipsPrev");
+    const next = document.getElementById("clipsNext");
+
+    if (!track || !prev || !next) {
+        return;
+    }
+
+    const getStep = () => Math.max(280, Math.floor(track.clientWidth * 0.84));
+
+    prev.addEventListener("click", () => {
+        track.scrollBy({ left: -getStep(), behavior: "smooth" });
+    });
+
+    next.addEventListener("click", () => {
+        track.scrollBy({ left: getStep(), behavior: "smooth" });
+    });
 }
