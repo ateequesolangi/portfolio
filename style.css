@@ -2833,6 +2833,8 @@ textarea:focus-visible,
 /* Role-Focused Portfolio Overhaul */
 .impact-hero,
 .impact-featured,
+.impact-application,
+.impact-build,
 .impact-timeline,
 .impact-ship,
 .impact-expertise,
@@ -2880,6 +2882,12 @@ textarea:focus-visible,
     display: block;
     color: var(--text-muted);
     font-size: 0.75rem;
+}
+
+.impact-hero__microcopy {
+    margin: 0.6rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.82rem;
 }
 
 .impact-hero__proof {
@@ -2960,7 +2968,7 @@ textarea:focus-visible,
 
 .featured-project-card__head h3 {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.02rem;
 }
 
 .featured-project-card__head span {
@@ -3001,50 +3009,22 @@ textarea:focus-visible,
     border: 0;
 }
 
-.featured-video-trigger {
-    cursor: pointer;
-    border: 0;
-    background: transparent;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    position: relative;
-    display: block;
+.featured-project-card__captions {
+    margin-top: -0.1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
 }
 
-.featured-video-trigger img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.featured-video-trigger__overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.52));
-}
-
-.featured-video-trigger__play {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 3.1rem;
-    height: 3.1rem;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    background: rgba(0, 0, 0, 0.62);
-    color: #fff;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.38);
-    transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.featured-video-trigger:hover .featured-video-trigger__play {
-    transform: translate(-50%, -50%) scale(1.04);
-    background: rgba(82, 247, 255, 0.2);
+.featured-project-card__captions span {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    padding: 0.28rem 0.5rem;
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .featured-project-card__tech-title {
@@ -3076,6 +3056,65 @@ textarea:focus-visible,
     color: var(--accent);
     margin-top: 0.15rem;
     flex-shrink: 0;
+}
+
+.featured-project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.featured-project-card__tag {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(82, 247, 255, 0.24);
+    border-radius: 999px;
+    background: rgba(82, 247, 255, 0.12);
+    color: var(--accent);
+    font-size: 0.63rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    padding: 0.28rem 0.5rem;
+}
+
+.featured-project-card__role {
+    font-size: 0.72rem;
+    line-height: 1.45;
+}
+
+.impact-application__list,
+.impact-build__list {
+    margin: 0.4rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.impact-application__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.impact-application__list li,
+.impact-build__list li {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.88rem;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0.7rem;
+    color: var(--text);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.impact-application__list li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.impact-application__list i {
+    color: var(--accent-2);
 }
 
 .impact-proof-grid {
@@ -3334,6 +3373,10 @@ textarea:focus-visible,
     .impact-real__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .impact-application__list {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 980px) {
@@ -3350,6 +3393,8 @@ textarea:focus-visible,
 @media (max-width: 760px) {
     .impact-hero,
     .impact-featured,
+    .impact-application,
+    .impact-build,
     .impact-timeline,
     .impact-ship,
     .impact-expertise,
@@ -3367,4 +3412,12 @@ textarea:focus-visible,
     .impact-hero__highlights {
         margin-top: 0.75rem;
     }
+
+    .featured-project-card__captions {
+        gap: 0.3rem;
+    }
+}
+
+.page-shell--home {
+    gap: 1.65rem;
 }

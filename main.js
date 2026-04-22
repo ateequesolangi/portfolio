@@ -102,8 +102,11 @@ const featuredProjects = [
         title: "The Final Overs",
         role: "Systems Developer",
         platform: "Meta Quest and PC VR",
-        impact: "Multiplayer VR cricket game with real-time analytics and telemetry systems used to drive live updates and player engagement.",
+        impact: "Multiplayer VR cricket system with live telemetry used for production gameplay iteration and engagement tuning.",
         videoId: "9yAwpSjihTg",
+        videoCaptionPrimary: "Gameplay demonstration",
+        videoCaptionSecondary: "Simulation walkthrough",
+        impactTags: ["Multi-User VR", "Training Simulation", "Enterprise VR"],
         highlights: [
             "REST API telemetry system",
             "Event logging pipeline",
@@ -116,8 +119,11 @@ const featuredProjects = [
         title: "Kynetik",
         role: "Technical Lead / Gameplay Systems",
         platform: "Meta Quest and PC VR",
-        impact: "High-intensity VR interaction experience demonstrating advanced player movement and immersive gameplay systems.",
+        impact: "High-intensity VR interaction experience validating advanced movement, input handling, and immersive systems reliability.",
         videoId: "OfFT4EXDvqo",
+        videoCaptionPrimary: "Gameplay demonstration",
+        videoCaptionSecondary: "Simulation walkthrough",
+        impactTags: ["Multi-User VR", "Training Simulation"],
         highlights: [
             "Real-time interaction systems",
             "Physics-based gameplay",
@@ -130,8 +136,11 @@ const featuredProjects = [
         title: "GraspXR",
         role: "Scenario Developer",
         platform: "Enterprise Quest and PC VR",
-        impact: "Enterprise VR training platform delivering multi-industry simulations including healthcare and industrial training scenarios.",
+        impact: "VR training platform used across healthcare and industrial environments to deliver repeatable simulation-based learning.",
         videoId: "8GoZydU9ibM",
+        videoCaptionPrimary: "Gameplay demonstration",
+        videoCaptionSecondary: "Simulation walkthrough",
+        impactTags: ["Healthcare Training", "Enterprise VR", "Training Simulation", "Multi-User VR"],
         highlights: [
             "Scenario-based simulation architecture",
             "Multi-user training environments",
@@ -214,71 +223,46 @@ function initFeaturedProjects() {
     container.innerHTML = featuredProjects
         .map((project, index) => renderFeaturedProjectCard(project, index))
         .join("");
-
-    container.addEventListener("click", (event) => {
-        const trigger = event.target.closest("[data-load-video]");
-        if (!trigger) {
-            return;
-        }
-
-        loadFeaturedProjectVideo(trigger);
-    });
 }
 
 function renderFeaturedProjectCard(project, index) {
     const highlights = project.highlights
         .map((item) => `<li><i class="fas fa-check-circle" aria-hidden="true"></i> ${item}</li>`)
         .join("");
+    const tags = project.impactTags
+        .map((tag) => `<span class="featured-project-card__tag">${tag}</span>`)
+        .join("");
 
     return `
         <article class="featured-project-card" data-reveal style="--delay: ${0.07 + index * 0.04}s;">
             <div class="featured-project-card__head">
                 <h3>${project.title}</h3>
-                <span>${project.platform}</span>
             </div>
 
-            <p class="featured-project-card__role"><strong>Role:</strong> ${project.role}</p>
             <p class="featured-project-card__impact">${project.impact}</p>
 
-            <div class="featured-project-card__video" data-video-shell>
-                <button
-                    type="button"
-                    class="featured-video-trigger"
-                    data-load-video="${project.videoId}"
-                    data-video-title="${project.title} gameplay video"
-                    aria-label="Play ${project.title} gameplay video">
-                    <img src="https://i.ytimg.com/vi/${project.videoId}/hqdefault.jpg" alt="${project.title} video preview" loading="lazy">
-                    <span class="featured-video-trigger__overlay"></span>
-                    <span class="featured-video-trigger__play"><i class="fas fa-play" aria-hidden="true"></i></span>
-                </button>
+            <div class="featured-project-card__video">
+                <iframe
+                    src="https://www.youtube.com/embed/${project.videoId}?rel=0&modestbranding=1"
+                    title="${project.title} video"
+                    loading="lazy"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="featured-project-card__captions">
+                <span>${project.videoCaptionPrimary}</span>
+                <span>${project.videoCaptionSecondary}</span>
             </div>
 
             <p class="featured-project-card__tech-title">Key technical highlights</p>
             <ul class="featured-project-card__highlights">${highlights}</ul>
+            <div class="featured-project-card__tags">${tags}</div>
+            <p class="featured-project-card__role"><strong>Role:</strong> ${project.role} | <strong>Platform:</strong> ${project.platform}</p>
         </article>
-    `;
-}
-
-function loadFeaturedProjectVideo(trigger) {
-    const videoShell = trigger.closest("[data-video-shell]");
-    const videoId = trigger.getAttribute("data-load-video");
-    const videoTitle = trigger.getAttribute("data-video-title") || "Project gameplay video";
-
-    if (!videoShell || !videoId || videoShell.classList.contains("is-loaded")) {
-        return;
-    }
-
-    videoShell.classList.add("is-loaded");
-    videoShell.innerHTML = `
-        <iframe
-            src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1"
-            title="${videoTitle}"
-            loading="lazy"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-        </iframe>
     `;
 }
 
