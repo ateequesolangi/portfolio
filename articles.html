@@ -7,25 +7,23 @@
     <meta name="description" content="Writing and technical essays on XR development, Unreal Engine, and engineering judgment by Ateeque Ur Rehman.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <div class="grid-overlay" aria-hidden="true"></div>
-    <div class="orb orb-a" aria-hidden="true"></div>
-    <div class="orb orb-b" aria-hidden="true"></div>
-
-    <header class="site-header">
+<div class="orb orb-a" aria-hidden="true"></div>
+<header class="site-header">
         <nav class="top-nav" aria-label="Primary">
             <a href="./index.html" class="brand-mark">
                 <span class="brand-mark__mono">AR</span>
                 <span class="brand-mark__text">Ateeque Ur Rehman</span>
             </a>
 
-            <div class="nav-cluster">
+            <button class="menu-toggle" type="button" aria-controls="navigation-links" aria-expanded="true">Menu</button>
+            <div class="nav-cluster" id="navigation-links">
                 <div class="nav-menu">
                     <a href="./index.html">Home</a>
                     <a href="./projects.html">Projects</a>
@@ -58,9 +56,9 @@
             <div class="page-hero__top">
                 <a href="./index.html" class="page-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to home</a>
             </div>
-            <p class="page-hero__label">Writing Archive</p>
-            <h1 class="page-hero__title">Thoughts on XR development, engineering judgment, and the practical side of shipping.</h1>
-            <p class="page-hero__body">These pieces sit between technical writing and production notes. They are meant to be useful, grounded, and shaped by real work rather than abstract commentary.</p>
+            <p class="page-hero__label">Writing</p>
+            <h1 class="page-hero__title">Notes from<br>the work.</h1>
+            <p class="page-hero__body">Perspectives on XR development, engineering decisions and the practical details of shipping software.</p>
             <div class="page-hero__actions">
                 <a href="https://medium.com/@ateeque.solangi" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Open Medium</a>
             </div>
@@ -78,7 +76,7 @@
                     </div>
                 </div>
                 <div class="story-card__thumb">
-                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=900&q=80" alt="VR development workspace">
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=900&q=80" alt="VR development workspace" loading="lazy">
                 </div>
             </a>
 
@@ -93,7 +91,7 @@
                     </div>
                 </div>
                 <div class="story-card__thumb">
-                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80" alt="Abstract AI themed visual">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80" alt="Abstract AI themed visual" loading="lazy">
                 </div>
             </a>
 
@@ -108,7 +106,7 @@
                     </div>
                 </div>
                 <div class="story-card__thumb">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80" alt="Terminal and development setup">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80" alt="Terminal and development setup" loading="lazy">
                 </div>
             </a>
 
@@ -123,7 +121,7 @@
                     </div>
                 </div>
                 <div class="story-card__thumb">
-                    <img src="./assets/images/FinalOvers.jpeg" alt="Final Overs project image">
+                    <img src="./assets/images/FinalOvers.jpeg" alt="Final Overs project image" loading="lazy">
                 </div>
             </a>
 
@@ -138,11 +136,12 @@
                     </div>
                 </div>
                 <div class="story-card__thumb">
-                    <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=900&q=80" alt="City lights at night">
+                    <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=900&q=80" alt="City lights at night" loading="lazy">
                 </div>
             </a>
         </section>
     </main>
+<footer class="site-footer"><p>Ateeque Ur Rehman <span>Unreal Engine · VR / XR</span></p><div><a href="https://www.linkedin.com/in/ateequesolangi" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/ateequesolangi" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://medium.com/@ateeque.solangi" target="_blank" rel="noopener noreferrer">Medium ↗</a></div></footer>
 
     <script type="module" src="./main.js"></script>
 </body>
