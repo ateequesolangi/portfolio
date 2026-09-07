@@ -7,25 +7,23 @@
     <meta name="description" content="Upcoming YouTube highlight hub for XR demos and Unreal Engine breakdowns by Ateeque Ur Rehman.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <div class="grid-overlay" aria-hidden="true"></div>
-    <div class="orb orb-a" aria-hidden="true"></div>
-    <div class="orb orb-b" aria-hidden="true"></div>
-
-    <header class="site-header">
+<div class="orb orb-a" aria-hidden="true"></div>
+<header class="site-header">
         <nav class="top-nav" aria-label="Primary">
             <a href="./index.html" class="brand-mark">
                 <span class="brand-mark__mono">AR</span>
                 <span class="brand-mark__text">Ateeque Ur Rehman</span>
             </a>
 
-            <div class="nav-cluster">
+            <button class="menu-toggle" type="button" aria-controls="navigation-links" aria-expanded="true">Menu</button>
+            <div class="nav-cluster" id="navigation-links">
                 <div class="nav-menu">
                     <a href="./index.html">Home</a>
                     <a href="./projects.html">Projects</a>
@@ -58,44 +56,18 @@
             <div class="page-hero__top">
                 <a href="./index.html" class="page-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to home</a>
             </div>
-            <p class="page-hero__label">Video Channel</p>
-            <h1 class="page-hero__title">The video hub is ready. The highlight reels are not live yet.</h1>
-            <p class="page-hero__body">This page will turn into a proper archive for gameplay showcases, interaction breakdowns, and Quest optimization demos. Until then, project videos are surfaced through the project cards.</p>
+            <p class="page-hero__label">Project videos</p>
+            <h1 class="page-hero__title">See the work<br>in motion.</h1>
+            <p class="page-hero__body">Gameplay and simulation demonstrations from projects I have contributed to.</p>
             <div class="page-hero__actions">
                 <a href="https://www.youtube.com/@ateequesolangi" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Open Channel</a>
                 <a href="./projects.html" class="btn btn--ghost">Browse Projects</a>
             </div>
         </section>
 
-        <section class="story-list" aria-label="YouTube plans">
-            <div class="story-empty panel" data-reveal style="--delay: 0.05s;">
-                <h3>No dedicated highlight uploads yet</h3>
-                <p>Once video production starts, this page will list short project reels, interaction explainers, and performance focused walkthroughs.</p>
-            </div>
-
-            <article class="story-card story-card--channel" data-reveal style="--delay: 0.1s;">
-                <div class="story-card__content">
-                    <div class="story-card__row">
-                        <div class="story-card__icon"><i class="fas fa-play" aria-hidden="true"></i></div>
-                        <span class="story-card__badge">Planned</span>
-                    </div>
-                    <h2 class="story-card__title">XR Feature Breakdowns</h2>
-                    <p class="story-card__body">Short videos showing how interaction systems are structured, where design choices matter, and what makes a mechanic feel believable in XR.</p>
-                </div>
-            </article>
-
-            <article class="story-card story-card--channel" data-reveal style="--delay: 0.15s;">
-                <div class="story-card__content">
-                    <div class="story-card__row">
-                        <div class="story-card__icon"><i class="fas fa-wave-square" aria-hidden="true"></i></div>
-                        <span class="story-card__badge">Planned</span>
-                    </div>
-                    <h2 class="story-card__title">Optimization Deep Dives</h2>
-                    <p class="story-card__body">A tighter look at the invisible work behind stable framerate, smart tradeoffs, and shipping immersive content on standalone hardware.</p>
-                </div>
-            </article>
-        </section>
+        <section class="video-grid" aria-label="Project demonstrations"><article class="video-card"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/9yAwpSjihTg?rel=0" title="The Final Overs project demonstration" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><h2>The Final Overs</h2><p>Systems Developer · VR cricket and gameplay telemetry</p><a class="view-link" href="https://www.youtube.com/watch?v=9yAwpSjihTg" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></article><article class="video-card"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/OfFT4EXDvqo?rel=0" title="Kynetik project demonstration" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><h2>Kynetik</h2><p>Technical Lead / Gameplay Systems · VR interaction and movement</p><a class="view-link" href="https://www.youtube.com/watch?v=OfFT4EXDvqo" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></article><article class="video-card"><div class="video-container"><iframe src="https://www.youtube-nocookie.com/embed/8GoZydU9ibM?rel=0" title="GraspXR project demonstration" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><h2>GraspXR</h2><p>Scenario Developer · Enterprise training simulations</p><a class="view-link" href="https://www.youtube.com/watch?v=8GoZydU9ibM" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></article></section>
     </main>
+<footer class="site-footer"><p>Ateeque Ur Rehman <span>Unreal Engine · VR / XR</span></p><div><a href="https://www.linkedin.com/in/ateequesolangi" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/ateequesolangi" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://medium.com/@ateeque.solangi" target="_blank" rel="noopener noreferrer">Medium ↗</a></div></footer>
 
     <script type="module" src="./main.js"></script>
 </body>

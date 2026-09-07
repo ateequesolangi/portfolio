@@ -154,9 +154,12 @@ const THEME_KEY = "portfolio-theme";
 
 let revealObserver = null;
 let glowRaf = null;
+let videoTrigger = null;
+let videoBackground = [];
 
 document.addEventListener("DOMContentLoaded", () => {
     initThemeToggle();
+    initMobileNavigation();
     initHeaderState();
     initVideoModal();
     initFeaturedProjects();
@@ -164,12 +167,12 @@ document.addEventListener("DOMContentLoaded", () => {
     initProjectReflectionBoard();
     initProjectsCatalog();
     initRevealAnimations();
-    initPointerGlow();
 });
 
 function initThemeToggle() {
     const toggle = document.getElementById("themeToggle");
-    const savedTheme = localStorage.getItem(THEME_KEY) || "dark";
+    let savedTheme = "light";
+    try { savedTheme = localStorage.getItem(THEME_KEY) || "light"; } catch {}
 
     applyTheme(savedTheme);
 
@@ -187,17 +190,33 @@ function applyTheme(theme) {
     const root = document.documentElement;
     const toggle = document.getElementById("themeToggle");
 
-    if (theme === "light") {
-        root.setAttribute("data-theme", "light");
-    } else {
-        root.removeAttribute("data-theme");
-    }
-
-    localStorage.setItem(THEME_KEY, theme);
+    root.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+    try { localStorage.setItem(THEME_KEY, theme); } catch {}
 
     if (toggle) {
         toggle.setAttribute("aria-label", theme === "light" ? "Switch to dark theme" : "Switch to light theme");
     }
+}
+
+function initMobileNavigation() {
+    const button = document.querySelector(".menu-toggle");
+    const navigation = document.getElementById("navigation-links");
+    if (!button || !navigation) return;
+    const mobile = window.matchMedia("(max-width: 760px)");
+    const setOpen = (open) => {
+        navigation.hidden = !open;
+        button.setAttribute("aria-expanded", String(open));
+        button.textContent = open ? "Close" : "Menu";
+    };
+    setOpen(!mobile.matches);
+    mobile.addEventListener("change", () => setOpen(!mobile.matches));
+    button.addEventListener("click", () => setOpen(navigation.hidden));
+    navigation.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && mobile.matches) {
+            setOpen(false);
+            button.focus();
+        }
+    });
 }
 
 function initHeaderState() {
@@ -247,134 +266,7 @@ function renderFeaturedProjectCard(project, index) {
                     title="${project.title} video"
                     loading="lazy"
                     frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <div class="featured-project-card__captions">
-                <span>${project.videoCaptionPrimary}</span>
-                <span>${project.videoCaptionSecondary}</span>
-            </div>
-
-            <p class="featured-project-card__tech-title">Key technical highlights</p>
-            <ul class="featured-project-card__highlights">${highlights}</ul>
-            <div class="featured-project-card__tags">${tags}</div>
-            <p class="featured-project-card__role"><strong>Role:</strong> ${project.role} | <strong>Platform:</strong> ${project.platform}</p>
-        </article>
-    `;
-}
-
-function initProjectReflectionBoard() {
-    const list = document.getElementById("projectSwitchList");
-    const panel = document.getElementById("projectReflection");
-
-    if (!list || !panel) {
-        return;
-    }
-
-    list.innerHTML = portfolioProjects
-        .map((project, index) => {
-            const activeClass = index === 0 ? "is-active" : "";
-            return `
-                <button
-                    type="button"
-                    class="project-switch ${activeClass}"
-                    role="tab"
-                    aria-selected="${index === 0 ? "true" : "false"}"
-                    data-project-tab="${index}">
-                    <span class="project-switch__title">${project.title}</span>
-                    <span class="project-switch__metric">${project.metric}</span>
-                </button>
-            `;
-        })
-        .join("");
-
-    const tabs = list.querySelectorAll("[data-project-tab]");
-
-    const activate = (index) => {
-        const project = portfolioProjects[index];
-        if (!project) {
-            return;
-        }
-
-        tabs.forEach((tab) => {
-            const tabIndex = Number.parseInt(tab.getAttribute("data-project-tab"), 10);
-            const isActive = tabIndex === index;
-            tab.classList.toggle("is-active", isActive);
-            tab.setAttribute("aria-selected", isActive ? "true" : "false");
-        });
-
-        renderProjectReflection(panel, index);
-    };
-
-    tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-            const tabIndex = Number.parseInt(tab.getAttribute("data-project-tab"), 10);
-            if (!Number.isNaN(tabIndex)) {
-                activate(tabIndex);
-            }
-        });
-    });
-
-    activate(0);
-}
-
-function renderProjectReflection(container, index) {
-    const project = portfolioProjects[index];
-    if (!container || !project) {
-        return;
-    }
-
-    const action = getProjectActionMeta(project);
-    const highlights = project.highlights
-        .map((item) => `<li>${item}</li>`)
-        .join("");
-    const mediaAttrs = action.enabled
-        ? `data-project-action="${index}" role="button" tabindex="0" aria-label="${action.label}"`
-        : `aria-label="${action.label}"`;
-    const buttonAttrs = action.enabled
-        ? `data-project-action="${index}" aria-label="${action.label}"`
-        : `disabled aria-disabled="true"`;
-
-    container.innerHTML = `
-        <figure class="reflection-media ${action.enabled ? "" : "is-locked"}" ${mediaAttrs}>
-            <img src="${project.image}" alt="${project.title}" loading="lazy">
-            <span class="reflection-media__badge">${project.platform}</span>
-        </figure>
-        <div class="reflection-body">
-            <div class="reflection-head">
-                <div>
-                    <h3>${project.title}</h3>
-                    <p class="reflection-role">${project.role} | ${project.timeframe}</p>
-                </div>
-                <span class="reflection-metric">${project.metric}</span>
-            </div>
-            <p class="reflection-summary">${project.summary}</p>
-            <ul class="reflection-highlights">${highlights}</ul>
-            <p class="reflection-outcome"><strong>Outcome:</strong> ${project.outcome}</p>
-            <div class="reflection-actions">
-                <button type="button" class="btn btn--primary reflection-action-btn" ${buttonAttrs}>
-                    <i class="${action.icon}" aria-hidden="true"></i> ${action.text}
-                </button>
-            </div>
-        </div>
-    `;
-
-    bindProjectActions(container);
-}
-
-function initProjectsCatalog() {
-    const catalog = document.getElementById("projectsCatalog");
-    if (!catalog) {
-        return;
-    }
-
-    catalog.innerHTML = portfolioProjects
-        .map((project, index) => {
-            const action = getProjectActionMeta(project);
-            const badges = project.tags.map((tag) => `<span class="catalog-card__badge">${tag}</span>`).join("");
+           …1326 tokens truncated…ss="catalog-card__badge">${tag}</span>`).join("");
             const delay = `${0.05 + index * 0.04}s`;
             const cardAttrs = action.enabled
                 ? `data-project-action="${index}" role="button" tabindex="0" aria-label="${action.label}"`
@@ -472,7 +364,7 @@ function getProjectActionMeta(project) {
 
     return {
         icon: "fas fa-lock",
-        text: "NDA details",
+        text: "No public demo",
         label: `${project.title} has no public link`,
         enabled: false
     };
@@ -498,6 +390,16 @@ function initVideoModal() {
         if (event.key === "Escape" && modal.classList.contains("is-open")) {
             closeVideo();
         }
+        if (event.key === "Tab" && modal.classList.contains("is-open")) {
+            const frame = document.getElementById("videoIframe");
+            if (event.shiftKey && document.activeElement === closeButton) {
+                event.preventDefault();
+                frame.focus();
+            } else if (!event.shiftKey && document.activeElement === frame) {
+                event.preventDefault();
+                closeButton.focus();
+            }
+        }
     });
 }
 
@@ -509,10 +411,14 @@ function openVideo(videoId) {
         return;
     }
 
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    videoTrigger = document.activeElement;
+    videoBackground = [...document.body.children].filter((element) => element !== modal && element.tagName !== "SCRIPT").map((element) => [element, element.inert]);
+    videoBackground.forEach(([element]) => { element.inert = true; });
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+    modal.querySelector(".close-modal").focus();
 }
 
 function closeVideo() {
@@ -523,6 +429,9 @@ function closeVideo() {
         return;
     }
 
+    videoBackground.forEach(([element, wasInert]) => { element.inert = wasInert; });
+    videoBackground = [];
+    videoTrigger?.focus();
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
     iframe.src = "";
