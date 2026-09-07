@@ -266,7 +266,134 @@ function renderFeaturedProjectCard(project, index) {
                     title="${project.title} video"
                     loading="lazy"
                     frameborder="0"
-           …1326 tokens truncated…ss="catalog-card__badge">${tag}</span>`).join("");
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="featured-project-card__captions">
+                <span>${project.videoCaptionPrimary}</span>
+                <span>${project.videoCaptionSecondary}</span>
+            </div>
+
+            <p class="featured-project-card__tech-title">Key technical highlights</p>
+            <ul class="featured-project-card__highlights">${highlights}</ul>
+            <div class="featured-project-card__tags">${tags}</div>
+            <p class="featured-project-card__role"><strong>Role:</strong> ${project.role} | <strong>Platform:</strong> ${project.platform}</p>
+        </article>
+    `;
+}
+
+function initProjectReflectionBoard() {
+    const list = document.getElementById("projectSwitchList");
+    const panel = document.getElementById("projectReflection");
+
+    if (!list || !panel) {
+        return;
+    }
+
+    list.innerHTML = portfolioProjects
+        .map((project, index) => {
+            const activeClass = index === 0 ? "is-active" : "";
+            return `
+                <button
+                    type="button"
+                    class="project-switch ${activeClass}"
+                    role="tab"
+                    aria-selected="${index === 0 ? "true" : "false"}"
+                    data-project-tab="${index}">
+                    <span class="project-switch__title">${project.title}</span>
+                    <span class="project-switch__metric">${project.metric}</span>
+                </button>
+            `;
+        })
+        .join("");
+
+    const tabs = list.querySelectorAll("[data-project-tab]");
+
+    const activate = (index) => {
+        const project = portfolioProjects[index];
+        if (!project) {
+            return;
+        }
+
+        tabs.forEach((tab) => {
+            const tabIndex = Number.parseInt(tab.getAttribute("data-project-tab"), 10);
+            const isActive = tabIndex === index;
+            tab.classList.toggle("is-active", isActive);
+            tab.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+
+        renderProjectReflection(panel, index);
+    };
+
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+            const tabIndex = Number.parseInt(tab.getAttribute("data-project-tab"), 10);
+            if (!Number.isNaN(tabIndex)) {
+                activate(tabIndex);
+            }
+        });
+    });
+
+    activate(0);
+}
+
+function renderProjectReflection(container, index) {
+    const project = portfolioProjects[index];
+    if (!container || !project) {
+        return;
+    }
+
+    const action = getProjectActionMeta(project);
+    const highlights = project.highlights
+        .map((item) => `<li>${item}</li>`)
+        .join("");
+    const mediaAttrs = action.enabled
+        ? `data-project-action="${index}" role="button" tabindex="0" aria-label="${action.label}"`
+        : `aria-label="${action.label}"`;
+    const buttonAttrs = action.enabled
+        ? `data-project-action="${index}" aria-label="${action.label}"`
+        : `disabled aria-disabled="true"`;
+
+    container.innerHTML = `
+        <figure class="reflection-media ${action.enabled ? "" : "is-locked"}" ${mediaAttrs}>
+            <img src="${project.image}" alt="${project.title}" loading="lazy">
+            <span class="reflection-media__badge">${project.platform}</span>
+        </figure>
+        <div class="reflection-body">
+            <div class="reflection-head">
+                <div>
+                    <h3>${project.title}</h3>
+                    <p class="reflection-role">${project.role} | ${project.timeframe}</p>
+                </div>
+                <span class="reflection-metric">${project.metric}</span>
+            </div>
+            <p class="reflection-summary">${project.summary}</p>
+            <ul class="reflection-highlights">${highlights}</ul>
+            <p class="reflection-outcome"><strong>Outcome:</strong> ${project.outcome}</p>
+            <div class="reflection-actions">
+                <button type="button" class="btn btn--primary reflection-action-btn" ${buttonAttrs}>
+                    <i class="${action.icon}" aria-hidden="true"></i> ${action.text}
+                </button>
+            </div>
+        </div>
+    `;
+
+    bindProjectActions(container);
+}
+
+function initProjectsCatalog() {
+    const catalog = document.getElementById("projectsCatalog");
+    if (!catalog) {
+        return;
+    }
+
+    catalog.innerHTML = portfolioProjects
+        .map((project, index) => {
+            const action = getProjectActionMeta(project);
+            const badges = project.tags.map((tag) => `<span class="catalog-card__badge">${tag}</span>`).join("");
             const delay = `${0.05 + index * 0.04}s`;
             const cardAttrs = action.enabled
                 ? `data-project-action="${index}" role="button" tabindex="0" aria-label="${action.label}"`
